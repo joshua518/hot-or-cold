@@ -1,12 +1,15 @@
 #!/usr/bin/env ruby
-
 target_number = rand(1..100)
-print "What is my number? "
-number = gets.to_i
+loop do
+  print "What is my number? "
+  number = Integer(gets)
 
-if number == target_number
-  puts "Hey! You guessed the right number, good job."
-else
-  puts "Hey you, yeah you. You messed up :P"
-end
-
+  if target_number > number 
+    puts "My number is higher!"
+  elsif target_number < number 
+    puts "My number is lower!"
+  else 
+    puts "Yay! You got the right number. My number is #{target_number}."
+    break
+  end 
+end 
